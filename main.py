@@ -7,6 +7,7 @@ from create_excel_report import create_excel_report
 from erlang_staffing import SHIFT_HOURS
 from ideal_shift import find_ideal_shift_pattern, display_ideal_shift_pattern
 from simulation import simulate_staffing_plan
+from shift_simulation import simulate_ideal_pattern
 
 
 def main():
@@ -96,6 +97,12 @@ def main():
     # Run simulation to validate staffing needs
     print("\n=== RUNNING SIMULATION TO VALIDATE STAFFING NEEDS ===")
     simulate_staffing_plan(staffing_needs)
+
+    from shift_simulation import simulate_ideal_pattern
+
+    # Add after finding the ideal pattern
+    print("\n=== SIMULATING IDEAL PATTERN PERFORMANCE ===")
+    simulate_ideal_pattern(ideal_pattern)
 
     # Create Excel report
     create_excel_report(staffing_needs, ideal_pattern)
