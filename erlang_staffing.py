@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+from pyworkforce.queuing import ErlangC
 
 # Data provided
 arrival_rate_urgent = {
@@ -17,54 +18,18 @@ DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday',
                 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 HOURS_PER_DAY = 24
 MINUTES_PER_HOUR = 60
-AGENT_EFFICIENCY = 0.7
-URGENT_TASK_WORK_MINUTES = 6.3
+URGENT_TASK_WORK_MINUTES = 6.3  # Average work time for urgent tasks in minutes
 SHIFT_HOURS = 8  # We can change the shift hours 4, 6, 8, or 12
 SHIFT_PATTERN = 3  # Number of shift pattern to cover a full day according to SHIFT_HOURS
 WORKDAYS_PER_WEEK = 6
-
-# Step 1: Implement Erlang C formula
-
-
-def erlang_c(traffic_intensity, num_agents):
-    """
-    Calculate the probability of waiting using Erlang C formula
-
-    Parameters:
-    traffic_intensity (float): Traffic intensity (arrival rate * service time)
-    num_agents (int): Number of agents/servers
-
-    Returns:
-    float: Probability of waiting
-    """
-    if num_agents <= traffic_intensity:
-        return 1.0  # If traffic intensity >= agents, probability of waiting is 100%
-
-    # Calculate the first part of the Erlang C formula
-
-    # Calculate the probability that all agents are busy (numerator part 1)
-    part1 = (traffic_intensity ** num_agents) / math.factorial(num_agents)
-
-    # Calculate the adjustment factor for waiting (numerator part 2)
-    part2 = num_agents / (num_agents - traffic_intensity)
-
-    # Calculate the sum of probabilities that 0 to (num_agents - 1) agents are busy (denominator)
-    sum_part = 0
-    for i in range(num_agents):
-        sum_part += (traffic_intensity ** i) / math.factorial(i)
-
-    # Combine all parts to get the Erlang C probability of waiting
-    probability_waiting = (part1 * part2) / (sum_part + (part1 * part2))
-
-    # Return the probability that an arriving task will have to wait
-    return probability_waiting
-
-# Step 2: Calculate required staff based on arrival rate and service time
+SLA = 0.8
+AVERAGE_SPEED_OF_ANSWER = 0.3  # Average speed of answer target in seconds
 
 
-def calculate_required_staff(arrival_rate, service_time_minutes=URGENT_TASK_WORK_MINUTES, target_wait_probability=0.2):
+def calculate_required_staff(arrival_rate, service_time_minutes=URGENT_TASK_WORK_MINUTES, target_wait_probability=SLA):
     """
     Calculate the required number of staff based on arrival rate and service time
+    using pyworkforce ErlangC implementation
 
     Parameters:
     arrival_rate (float): Average arrival rate per hour
@@ -74,25 +39,31 @@ def calculate_required_staff(arrival_rate, service_time_minutes=URGENT_TASK_WORK
     Returns:
     int: Required number of staff
     """
-    # Convert service time to hours to calculate the traffic intensity
-    service_time_hours = service_time_minutes / MINUTES_PER_HOUR
+    # Skip calculation if arrival rate is 0
+    if arrival_rate == 0:
+        return 0
 
-    # Calculate traffic intensity (arrival rate * service time)
-    traffic_intensity = arrival_rate * service_time_hours
+    # Set up the ErlangC model with our parameters
+    erlang = ErlangC(
+        transactions=arrival_rate,
+        aht=service_time_minutes,
+        # Average speed of answer target (seconds)
+        asa=AVERAGE_SPEED_OF_ANSWER,
+        interval=60,  # 60-minute interval (1 hour)
+        shrinkage=0  # Convert efficiency to shrinkage
+    )
 
-    # Start with the minimum possible number of agents
-    num_agents = max(1, math.ceil(traffic_intensity))
+    # Calculate required positions for service level (1 - target_wait_probability)
+    # Convert wait probability to service level
 
-    # Increase number of agents until we meet the target wait probability
-    while erlang_c(traffic_intensity, num_agents) > target_wait_probability:
-        num_agents += 1
+    result = erlang.required_positions(service_level=target_wait_probability)
 
-    # Adjust for agent efficiency
-    adjusted_agents = math.ceil(num_agents / AGENT_EFFICIENCY)
+    # Get the positions needed from the result
+    # The result is a dictionary with 'positions' key
+    agents_needed = result['positions']
 
-    return adjusted_agents
-
-# Step 3: Calculate staffing needs for each hour of each day
+    # Return the result as an integer, rounding up to ensure adequate staffing
+    return int(np.ceil(agents_needed))
 
 
 def calculate_hourly_staffing_needs():
