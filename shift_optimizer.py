@@ -5,26 +5,6 @@ import copy
 from erlang_staffing import SHIFT_HOURS, SHIFT_PATTERN
 
 
-# def evaluate_shift_pattern(pattern, staffing_needs_day):
-#     """
-#     Evaluate a shift pattern by calculating total agents needed for all three shifts
-#     """
-#     # Use deepcopy instead of shallow copy
-#     pattern_copy = copy.deepcopy(pattern)
-#     total_agents = 0
-
-#     # Calculate agents needed for each shift in the pattern
-#     for i, shift in enumerate(pattern_copy['shifts']):
-#         agents = calculate_agents_needed(shift, staffing_needs_day)
-#         pattern_copy['shifts'][i]['agents_needed'] = agents
-#         total_agents += agents
-
-#     # Add total agents to the pattern
-#     pattern_copy['total_agents'] = total_agents
-
-#     return pattern_copy
-
-
 def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     """
     Generate 8 distinct shift patterns, each consisting of three 8-hour shifts that cover a full day
@@ -140,33 +120,33 @@ def evaluate_shift_pattern(pattern, staffing_needs_day):
     return pattern_copy
 
 
-def create_shift_plan(staffing_needs):
-    """
-    Create an optimal shift plan based on staffing needs
+# def create_shift_plan(staffing_needs):
+#     """
+#     Create an optimal shift plan based on staffing needs
 
-    Parameters:
-    staffing_needs (dict): Dictionary with staffing needs for each day and hour
+#     Parameters:
+#     staffing_needs (dict): Dictionary with staffing needs for each day and hour
 
-    Returns:
-    dict: Dictionary with optimal shift pattern for each day
-    """
-    # Generate all possible shift patterns
-    all_patterns = generate_shift_patterns()
-    shift_plan = {}
+#     Returns:
+#     dict: Dictionary with optimal shift pattern for each day
+#     """
+#     # Generate all possible shift patterns
+#     all_patterns = generate_shift_patterns()
+#     shift_plan = {}
 
-    # For each day, find the optimal shift pattern
-    for day in erlang_staffing.DAYS_OF_WEEK:
-        # Evaluate each pattern for this day
-        evaluated_patterns = []
-        for pattern in all_patterns:
-            evaluated_pattern = evaluate_shift_pattern(
-                pattern, staffing_needs[day])
-            evaluated_patterns.append(evaluated_pattern)
+#     # For each day, find the optimal shift pattern
+#     for day in erlang_staffing.DAYS_OF_WEEK:
+#         # Evaluate each pattern for this day
+#         evaluated_patterns = []
+#         for pattern in all_patterns:
+#             evaluated_pattern = evaluate_shift_pattern(
+#                 pattern, staffing_needs[day])
+#             evaluated_patterns.append(evaluated_pattern)
 
-        # Find the pattern with the minimum total agents
-        best_pattern = min(evaluated_patterns, key=lambda p: p['total_agents'])
+#         # Find the pattern with the minimum total agents
+#         best_pattern = min(evaluated_patterns, key=lambda p: p['total_agents'])
 
-        # Store the best pattern for this day
-        shift_plan[day] = copy.deepcopy(best_pattern)
+#         # Store the best pattern for this day
+#         shift_plan[day] = copy.deepcopy(best_pattern)
 
-    return shift_plan
+#     return shift_plan
