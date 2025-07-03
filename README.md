@@ -124,7 +124,7 @@ This module provides hour-by-hour validation of our Erlang C staffing calculatio
    - Uses event-driven processing to accurately represent call center dynamics
 
 2. **Key Parameters and Configuration Options:**
-   - **Average Handle Time (AHT):** 6.3 minutes (378 seconds) as the mean, but each call varies randomly
+   - **Average Handle Time (AHT):** 6.3 minutes (378 seconds) as the mean, each call handling time varies randomly.
    - **Service Level Target:** Calls answered within 20 seconds (measured as percentage)
    - **Caller Patience Model:** Exponential distribution with 2-minute average (tha patience is randomly genrated on an average 2 minutes) 
    - **Call Volume:** Based on historical data for each hour/day
@@ -219,12 +219,13 @@ This module validates entire shift patterns with continuously varying call loads
        with agents.request() as req:
            results = yield env.timeout(patience) | req
    ```
-   - results = yield env.timeout(patience) | req line is implementing a race condition between getting an agent and running out of patience.
-   - **Service Time Modeling:** Realistic variation in how long calls take
-   - **Patience Modeling:** Different thresholds for when callers abandon
-   - **Resource Contention:** Accurate representation of queue formation
+   - results = yield env.timeout(patience) | req This line is implementing a race condition between getting an agent and running out of patience.
+   
+   - **Service Time Modeling:** 6.3 minutes (378 seconds) as the mean, each call handling time varies randomly.
+   - **Patience Modeling:** Different thresholds for when callers abandon (tha patience is randomly genrated on an average 2 minutes)
    - **Abandonment Logic:** Callers leave if their patience is exceeded
-   - **Wait Time Tracking:** Records how long each caller waits
+   - **Wait Time Tracking:** Records how long each caller waits (If wait time increses more then 20 secondes that breaches SLA).
+      SLA calculation  service_level = np.mean(wait_time <= 20) * 100
 
 5. **Comprehensive Analysis Framework:**
    - **Shift-Level Metrics:** Performance for each complete shift
@@ -236,7 +237,7 @@ This module validates entire shift patterns with continuously varying call loads
 6. **Example Results and Interpretation:**
    ```
    First Shift (03:00-11:00): 
-   - 28 calls arrived
+   - 28 calls arrived 
    - 28 calls handled successfully
    - 0 calls abandoned
    - Average wait time: 1.2 seconds

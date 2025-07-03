@@ -1,8 +1,6 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import erlang_staffing
 import copy
-from erlang_staffing import SHIFT_HOURS, SHIFT_PATTERN
+from erlang_staffing import SHIFT_HOURS
 
 
 def generate_shift_patterns(shift_hours=SHIFT_HOURS):
@@ -20,12 +18,15 @@ def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     """
     patterns = []
 
+    # Calculate number of shifts needed to cover 24 hours
+    shifts_per_day = erlang_staffing.HOURS_PER_DAY // shift_hours
+
     # We will consider 8 distinct patterns (starting at hours 0-7)
     for pattern_start in range(SHIFT_HOURS):
         pattern = []
 
-        # Each pattern has exactly 3 shifts of 8 hours each
-        for shift_index in range(SHIFT_PATTERN):
+        # For each shift in the pattern, calculate its start and end hours
+        for shift_index in range(shifts_per_day):
             # Calculate the start hour for this shift
             start_hour = (pattern_start + shift_index *
                           shift_hours) % erlang_staffing.HOURS_PER_DAY
@@ -119,34 +120,71 @@ def evaluate_shift_pattern(pattern, staffing_needs_day):
 
     return pattern_copy
 
+def display_shift_patterns(patterns):
+    """
+    Display all generated shift patterns in a formatted way
+    
+    Parameters:
+    patterns (list): List of pattern dictionaries
+    """
+    
+    print(f"\nGenerated {len(patterns)} shift patterns:")
+    for pattern in patterns:
+        print(f"  Pattern {pattern['pattern_number']}:")
+        
+        for i, shift in enumerate(pattern['shifts']):
+            shift_names = ["First", "Second", "Third", 
+                           "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
+            
+            shift_type = shift_names[i] if i < len(shift_names) else f"Shift {i+1}"
+            start_time = f"{shift['start_hour']:02d}:00"
+            end_time = f"{shift['end_hour']:02d}:00"
+            
+            print(f"    {shift_type} Shift: {start_time}-{end_time}")
 
-# def create_shift_plan(staffing_needs):
-#     """
-#     Create an optimal shift plan based on staffing needs
+def display_pattern_evaluations(all_patterns, staffing_needs):
+    """
+    Display evaluations of all patterns across all days
+    
+    Parameters:
+    all_patterns (list): List of pattern dictionaries
+    staffing_needs (dict): Dictionary with staffing needs for each day
+    """
 
-#     Parameters:
-#     staffing_needs (dict): Dictionary with staffing needs for each day and hour
+    print("\nAnalyzing staffing needs for each shift pattern and day:")
+    
+    for day in staffing_needs.keys():
+        print(f"\n{day} - Staffing needs by pattern:")
+        
+        for pattern in all_patterns:
+            evaluated_pattern = evaluate_shift_pattern(pattern, staffing_needs[day])
+            total_agents = evaluated_pattern['total_agents']
+            total_agent_hours = evaluated_pattern['total_agent_hours']
+            
+            print(f"  Pattern {pattern['pattern_number']}: Total {total_agents} agents needed, {total_agent_hours} agent hours")
+            
+            for i, shift in enumerate(evaluated_pattern['shifts']):
+                shift_names = ["First", "Second", "Third", 
+                              "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
+                
+                shift_type = shift_names[i] if i < len(shift_names) else f"Shift {i+1}"
+                start_time = f"{shift['start_hour']:02d}:00"
+                end_time = f"{shift['end_hour']:02d}:00"
+                agents = shift['agents_needed']
+                agent_hours = shift['agent_hours']
+                
+                print(f"    {shift_type} Shift ({start_time}-{end_time}): {agents} agents, {agent_hours} agent hours")
 
-#     Returns:
-#     dict: Dictionary with optimal shift pattern for each day
-#     """
-#     # Generate all possible shift patterns
-#     all_patterns = generate_shift_patterns()
-#     shift_plan = {}
+if __name__ == "__main__":
+    # This allows the script to be run directly
+    print("Generating shift patterns...")
+    all_patterns = generate_shift_patterns()
 
-#     # For each day, find the optimal shift pattern
-#     for day in erlang_staffing.DAYS_OF_WEEK:
-#         # Evaluate each pattern for this day
-#         evaluated_patterns = []
-#         for pattern in all_patterns:
-#             evaluated_pattern = evaluate_shift_pattern(
-#                 pattern, staffing_needs[day])
-#             evaluated_patterns.append(evaluated_pattern)
+    display_shift_patterns(all_patterns)
+    
 
-#         # Find the pattern with the minimum total agents
-#         best_pattern = min(evaluated_patterns, key=lambda p: p['total_agents'])
 
-#         # Store the best pattern for this day
-#         shift_plan[day] = copy.deepcopy(best_pattern)
+    
 
-#     return shift_plan
+
+

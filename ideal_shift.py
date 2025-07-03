@@ -1,7 +1,7 @@
 import shift_optimizer
 import erlang_staffing
 import matplotlib.pyplot as plt
-import numpy as np
+from erlang_staffing import arrival_rate_urgent  # Import call volume data
 
 
 def find_ideal_shift_pattern(staffing_needs):
@@ -59,7 +59,6 @@ def find_ideal_shift_pattern(staffing_needs):
     
     # Find the optimal pattern (minimizing total agent hours)
     optimal_pattern = min(weekly_pattern_stats, key=lambda p: p['total_weekly_hours'])
-    
     return optimal_pattern
 
 
@@ -73,49 +72,24 @@ def display_ideal_shift_pattern(optimal_pattern):
     print("\nShift times for this pattern:")
     
     for i, shift_time in enumerate(optimal_pattern['shift_times']):
-        shift_names = ["First", "Second", "Third", "Fourth", "Fifth"]
+        shift_names = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
         shift_type = shift_names[i] if i < len(shift_names) else f"Shift {i+1}"
         print(f"  {shift_type} Shift: {shift_time}")
     
     print("\nDaily breakdown with this pattern:")
     for day_stat in optimal_pattern['daily_stats']:
-        print(f"\n{day_stat['day']}: {day_stat['agents']} agents, {day_stat['hours']} agent hours, {day_stat['utilization']}% utilization")
+        day = day_stat['day']
+        total_day_calls = sum(arrival_rate_urgent[day])
+        print(f"\n{day_stat['day']}: {day_stat['agents']} agents, {day_stat['hours']} agent hours, {day_stat['utilization']}% utilization, {total_day_calls} total expected calls")
         for i, shift in enumerate(day_stat['shifts']):
-            shift_names = ["First", "Second", "Third", "Fourth", "Fifth"]
+            shift_names = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
             shift_type = shift_names[i] if i < len(shift_names) else f"Shift {i+1}"
             start_time = f"{shift['start_hour']:02d}:00"
             end_time = f"{shift['end_hour']:02d}:00"
             agents = shift['agents_needed']
             agent_hours = shift['agent_hours']
-            print(f"  {shift_type} Shift ({start_time}-{end_time}): {agents} agents, {agent_hours} agent hours")
-
-
-def visualize_pattern_comparison(weekly_pattern_stats):
-    """Create a bar chart comparing the resource requirements of each pattern"""
-    patterns = [p['pattern_number'] for p in weekly_pattern_stats]
-    agent_hours = [p['total_weekly_hours'] for p in weekly_pattern_stats]
-    
-    plt.figure(figsize=(12, 6))
-    bars = plt.bar(patterns, agent_hours, color='skyblue')
-    
-    # Highlight the optimal pattern
-    optimal_idx = agent_hours.index(min(agent_hours))
-    bars[optimal_idx].set_color('green')
-    
-    plt.xlabel('Pattern Number')
-    plt.ylabel('Total Weekly Agent Hours')
-    plt.title('Comparison of Weekly Resource Requirements by Pattern')
-    plt.xticks(patterns)
-    
-    # Add value labels on top of each bar
-    for i, bar in enumerate(bars):
-        plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 50,
-                f'{agent_hours[i]}',
-                ha='center', va='bottom')
-    
-    plt.savefig('pattern_comparison.png')
-    plt.close()
-    print("\nPattern comparison chart saved as 'pattern_comparison.png'")
+            shift_calls = sum(arrival_rate_urgent[day][hour] for hour in shift['hours'])
+            print(f"  {shift_type} Shift ({start_time}-{end_time}): {agents} agents, {agent_hours} agent hours, {shift_calls} expected calls")
 
 
 if __name__ == "__main__":
@@ -126,6 +100,3 @@ if __name__ == "__main__":
     optimal_pattern = find_ideal_shift_pattern(staffing_needs)
     display_ideal_shift_pattern(optimal_pattern)
     
-    # Visualize the comparison
-    weekly_pattern_stats = []  # You would need to recalculate this
-    visualize_pattern_comparison(weekly_pattern_stats)
