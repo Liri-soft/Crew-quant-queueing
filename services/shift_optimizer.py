@@ -1,17 +1,17 @@
-import erlang_staffing
+import services.erlang_staffing as erlang_staffing
 import copy
-from erlang_staffing import SHIFT_HOURS
+from services.erlang_staffing import SHIFT_HOURS
 
 
 def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     """
-    Generate 8 distinct shift patterns, each consisting of three 8-hour shifts that cover a full day
+    Generate distinct shift patterns, each consisting of three 8-hour shifts that cover a full day
 
     Parameters:
     shift_hours (int): Length of each shift in hours (default: 8)
 
     Returns:
-    list: List of shift patterns, where each pattern is a list of three shifts
+    list: List of shift patterns, where each pattern is a list of shifts
 
     Each pattern starts at a different hour (0-7), and consists of three consecutive 8-hour shifts.
     For example, pattern 0 has shifts at 0:00-8:00, 8:00-16:00, and 16:00-0:00.

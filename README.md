@@ -269,7 +269,8 @@ This module validates entire shift patterns with continuously varying call loads
 
 3. **Run the Program:**
    ```powershell
-   python main.py
+   source venv/bin/activate
+   uvicoen main:app --reload
    ```
 
 4. **Review Results:**

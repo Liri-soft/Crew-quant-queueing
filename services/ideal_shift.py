@@ -1,7 +1,7 @@
-import shift_optimizer
-import erlang_staffing
+import services.shift_optimizer as shift_optimizer
+import services.erlang_staffing as erlang_staffing
 import matplotlib.pyplot as plt
-from erlang_staffing import arrival_rate_urgent  # Import call volume data
+from services.erlang_staffing import arrival_rate_urgent  # Import call volume data
 
 
 def find_ideal_shift_pattern(staffing_needs):

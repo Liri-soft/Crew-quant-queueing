@@ -12,7 +12,7 @@ CALL_VOLUME = {
 SHIFT_HOURS = 8          # Length of each shift (4, 6, 8, or 12)
 AGENT_EFFICIENCY = 100  # Agent efficiency (e.g., 100% of time is productive)
 # Call handling
-AVG_HANDLING_TIME = 6.3   # Average handling time in minutes
+AVG_HANDLING_TIME = 10   # Average handling time in minutes
 AVG_PATIENCE = 180               # Average caller patience in seconds before abandonment
 # Service level goals
 TARGET_SLA = 20          # Target answer time in seconds (e.g., 20 seconds)
@@ -20,7 +20,7 @@ DESIRED_SLA = 95         # Target service level percentage (e.g., 95%)
 # Call complexity distribution
 CALL_COMPLEXITY_DISTRIBUTION = {
     # [normal, semicomplex, complex]
-    "probabilities": [0.50, 0.30, 0.20],
+    "probabilities": [50, 30, 20], # addition all the probabilities should be 100% 
     "complexity_factors": {
         "semicomplex": 1.2,  # 20% longer handling time
         "complex": 1.8,      # 80% longer handling time

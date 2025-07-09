@@ -1,7 +1,7 @@
 import simpy
 import numpy as np
-from erlang_staffing import arrival_rate_urgent
-from config import TARGET_SLA, DESIRED_SLA, SHIFT_HOURS, AVG_PATIENCE, LUNCH_BREAK_TIME, MAX_PERCENTAGE_AGENTS_ON_BREAK, AVG_HANDLING_TIME, CALL_COMPLEXITY_DISTRIBUTION, ACW_MIN, ACW_MAX, AGENT_EFFICIENCY
+from services.erlang_staffing import arrival_rate_urgent
+from config_variables.config import TARGET_SLA, DESIRED_SLA, SHIFT_HOURS, AVG_PATIENCE, LUNCH_BREAK_TIME, MAX_PERCENTAGE_AGENTS_ON_BREAK, AVG_HANDLING_TIME, CALL_COMPLEXITY_DISTRIBUTION, ACW_MIN, ACW_MAX, AGENT_EFFICIENCY
 
 # Convert minutes to seconds for simulation
 AHT = AVG_HANDLING_TIME * 60  # Average handling time in seconds
@@ -75,7 +75,7 @@ def run_shift_simulation(num_agents, hourly_arrival_rates, shift_hours=SHIFT_HOU
 
         # Determine call complexity (normal, semicomplex, or complex)
         call_complexity = np.random.choice(['normal', 'semicomplex', 'complex'], # selecting call complexity
-                                          p=CALL_COMPLEXITY_DISTRIBUTION["probabilities"]) # probabilities of selecting call complexity
+                                          p=[x / 100 for x in CALL_COMPLEXITY_DISTRIBUTION["probabilities"]]) # probabilities of selecting call complexity
                                           
 
         # Set handling time based on complexity
@@ -225,24 +225,23 @@ def simulate_ideal_pattern(ideal_pattern):
     ideal_pattern (dict): The ideal pattern structure from find_ideal_shift_pattern()
 
     Returns:
-    dict: Simulation results by day and shift
+    dict: Dictionary containing both Erlang C and final simulation results by day and shift
     """
-    results = {}
-
+    erlang_results = {}  # Store initial Erlang C results
+    final_results = {}  # Store results after optimization
 
     print("\n=== SIMULATING IDEAL SHIFT PATTERN PERFORMANCE ===")
 
     for day_stat in ideal_pattern['daily_stats']:
         day = day_stat['day']
-        day_results = []
+        day_erlang_results = []
+        day_final_results = []
 
-        print(
-            f"\nSimulating {day} with Pattern {ideal_pattern['pattern_number']}:")
+        print(f"\nSimulating {day} with Pattern {ideal_pattern['pattern_number']}:")
 
         for i, shift in enumerate(day_stat['shifts']):
             shift_names = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth"]
-            shift_type = shift_names[i] if i < len(
-                shift_names) else f"Shift {i+1}"
+            shift_type = shift_names[i] if i < len(shift_names) else f"Shift {i+1}"
 
             # Get the hours covered by this shift
             hours = shift['hours']
@@ -253,93 +252,105 @@ def simulate_ideal_pattern(ideal_pattern):
             # Get the number of agents for this shift
             num_agents = shift['agents_needed']
             
-            # Run the simulation for this shift
-            result = run_shift_simulation(num_agents, arrival_rates, debug=False)
+            # Run the simulation for this shift with Erlang C agents
+            erlang_result = run_shift_simulation(num_agents, arrival_rates, debug=False)
 
-            # Store the results
-            shift_result = {
-                "shift_type":shift_type,
+            # Store the Erlang C results
+            erlang_shift = {
+                "shift_type": shift_type,
                 "hours": hours,
                 "start_time": f"{shift['start_hour']:02d}:00",
                 "end_time": f"{shift['end_hour']:02d}:00",
                 "agents": num_agents,
-                "calls_arrived": result["calls_arrived"],
-                "calls_handled": result["calls_handled"],
-                "calls_abandoned": result["calls_abandoned"],
-                "calls_expected": result["calls_expected"],
-                "avg_wait": result["avg_wait"],
-                "max_wait": result["max_wait"],
-                "service_level": result["service_level"]
+                "calls_arrived": erlang_result["calls_arrived"],
+                "calls_handled": erlang_result["calls_handled"],
+                "calls_abandoned": erlang_result["calls_abandoned"],
+                "calls_expected": erlang_result["calls_expected"],
+                "avg_wait": erlang_result["avg_wait"],
+                "max_wait": erlang_result["max_wait"],
+                "service_level": erlang_result["service_level"]
             }
-            day_results.append(shift_result)
+            day_erlang_results.append(erlang_shift)
 
-            # Print the results
-            print (f"SIMULATION ON ERLANG C CALCULATION FOR {shift_type} Shift")
-            print(f"  {shift_type} Shift ({shift_result['start_time']}-{shift_result['end_time']}): "
-                  f"{result['calls_arrived']} calls, "
-                  f"{result['calls_handled']} handled, "
-                  f"{result['calls_abandoned']} abandoned/Not Answered, "
-                  f"{result['avg_wait']:.1f}s avg wait, "
-                  f"{result['max_wait']:.1f}s max wait, "
-                  f"{result['service_level']:.1f}% service level (Ans within 20 seconds) {num_agents} agents")
+            # Create a copy for the final results
+            final_shift = erlang_shift.copy()
+            current_result = erlang_result  # Track current simulation result
+
+            # Print the Erlang C results
+            print(f"SIMULATION ON ERLANG C CALCULATION FOR {shift_type} Shift")
+            print(f"  {shift_type} Shift ({erlang_shift['start_time']}-{erlang_shift['end_time']}): "
+                  f"{erlang_result['calls_arrived']} calls, "
+                  f"{erlang_result['calls_handled']} handled, "
+                  f"{erlang_result['calls_abandoned']} abandoned/Not Answered, "
+                  f"{erlang_result['avg_wait']:.1f}s avg wait, "
+                  f"{erlang_result['max_wait']:.1f}s max wait, "
+                  f"{erlang_result['service_level']:.1f}% service level (Ans within 20 seconds) {num_agents} agents")
             
-            
-            # add +1 agent to num agent until service level is above 95%
-            if result['service_level'] >= DESIRED_SLA:
-                print('SEMULATION ON ERLANG C CALCULATION FOR SHIFT IS ABOVE 95%')
+            # Add agents until service level is above 95%
+            if current_result['service_level'] >= DESIRED_SLA:
+                print('SIMULATION ON ERLANG C CALCULATION FOR SHIFT IS ABOVE 95%')
             else:
-                print('SEMULATION AFTER INCREASING AGENTS UNTIL SERVICE LEVEL IS ABOVE 95%')
-            while result['service_level'] < DESIRED_SLA:
-                num_agents += 1
-                result = run_shift_simulation(num_agents, arrival_rates, debug=False)
-                shift_result['agents'] = num_agents
-                shift_result['service_level'] = result['service_level']
-                shift_result['calls_arrived'] = result['calls_arrived']
-                shift_result['calls_handled'] = result['calls_handled']
-                shift_result['calls_abandoned'] = result['calls_abandoned']
-                shift_result['avg_wait'] = result['avg_wait']
-                shift_result['max_wait'] = result['max_wait']
-                print(f"  Increasing agents to {num_agents} for {shift_type} Shift ({shift_result['start_time']}-{shift_result['end_time']}): "
-                        f"{result['service_level']:.1f}% service level, {result['calls_arrived']} Calls arrived, {result['calls_handled']} Calls handled,"
-                        f"{result['calls_abandoned']} Calls abandoned, {result['avg_wait']:.1f}s Avg wait, {result['max_wait']:.1f}s Max wait")
+                print('SIMULATION AFTER INCREASING AGENTS UNTIL SERVICE LEVEL IS ABOVE 95%')
+                final_agents = num_agents
+                
+                while current_result['service_level'] < DESIRED_SLA:
+                    final_agents += 1
+                    current_result = run_shift_simulation(final_agents, arrival_rates, debug=False)
+                    
+                    # Update final results (not the Erlang C results)
+                    final_shift['agents'] = final_agents
+                    final_shift['service_level'] = current_result['service_level']
+                    final_shift['calls_arrived'] = current_result['calls_arrived']
+                    final_shift['calls_handled'] = current_result['calls_handled']
+                    final_shift['calls_abandoned'] = current_result['calls_abandoned']
+                    final_shift['avg_wait'] = current_result['avg_wait']
+                    final_shift['max_wait'] = current_result['max_wait']
+                    
+                    print(f"  Increasing agents to {final_agents} for {shift_type} Shift ({final_shift['start_time']}-{final_shift['end_time']}): "
+                          f"{current_result['service_level']:.1f}% service level {current_result['calls_arrived']} Calls arrived, {current_result['calls_handled']} Calls handled,"
+                          f"{current_result['calls_abandoned']} Calls abandoned, {current_result['avg_wait']:.1f}s Avg wait, {current_result['max_wait']:.1f}s Max wait")
+            
+            day_final_results.append(final_shift)
         
         # Store the results for this day
-        results[day] = day_results
-
-        # Calculate day summary
-        day_calls = sum(r["calls_arrived"] for r in day_results)
-        day_handled = sum(r["calls_handled"] for r in day_results)
-        day_abandoned = sum(r["calls_abandoned"] for r in day_results)
-        day_sl = np.mean([r["service_level"]
-                         for r in day_results if r["calls_handled"] > 0])
+        erlang_results[day] = day_erlang_results
+        final_results[day] = day_final_results        # Calculate day summary for final results (for printing)
+        day_calls = sum(r["calls_arrived"] for r in day_final_results)
+        day_handled = sum(r["calls_handled"] for r in day_final_results)
+        day_abandoned = sum(r["calls_abandoned"] for r in day_final_results)
+        
+        # Safe calculation of mean service level
+        shifts_with_calls = [r for r in day_final_results if r["calls_handled"] > 0]
+        day_sl = np.mean([r["service_level"] for r in shifts_with_calls]) if shifts_with_calls else 100
 
         print(f"\n{day} Summary: {day_calls} calls, "
               f"{day_handled} handled, "
               f"{day_abandoned} abandoned/Not Answered, "
               f"{day_sl:.1f}% service level, "
-              f"total_agents = {sum(r['agents'] for r in day_results)}")
-        
+              f"total_agents = {sum(r['agents'] for r in day_final_results)}")
 
-
-    # Calculate weekly summary
-    all_shifts = [shift for day_shifts in results.values()
-                  for shift in day_shifts]
-    weekly_calls = sum(shift["calls_arrived"] for shift in all_shifts)
-    weekly_handled = sum(shift["calls_handled"] for shift in all_shifts)
-    weekly_abandoned = sum(shift["calls_abandoned"] for shift in all_shifts)
-    weekly_sl = np.mean([shift["service_level"]
-                        for shift in all_shifts if shift["calls_handled"] > 0])
+    # Calculate and print weekly final summary
+    all_final_shifts = [shift for day_shifts in final_results.values() for shift in day_shifts]
+    weekly_calls = sum(shift["calls_arrived"] for shift in all_final_shifts)
+    weekly_handled = sum(shift["calls_handled"] for shift in all_final_shifts)
+    weekly_abandoned = sum(shift["calls_abandoned"] for shift in all_final_shifts)
+    
+    # Safe calculation of mean service level
+    shifts_with_calls = [shift for shift in all_final_shifts if shift["calls_handled"] > 0]
+    weekly_sl = np.mean([shift["service_level"] for shift in shifts_with_calls]) if shifts_with_calls else 100
 
     print(f"\nWeekly Summary: {weekly_calls} calls, "
           f"{weekly_handled} handled, "
           f"{weekly_abandoned} abandoned/Not Answered, "
           f"{weekly_sl:.1f}% service level")
-    
-    # import json
-    # print("\nFull results structure:")
-    # print(json.dumps(results, indent=2))
-    
-    return results
+
+    # Return both result sets
+    return {
+        "erlang_results": erlang_results,
+        "final_results": final_results
+    }
+
+
 
 
 

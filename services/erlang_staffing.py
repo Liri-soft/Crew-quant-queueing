@@ -1,6 +1,6 @@
 import numpy as np
 from pyworkforce.queuing import ErlangC
-from config import SHIFT_HOURS, AVG_HANDLING_TIME, CALL_VOLUME
+from config_variables.config import SHIFT_HOURS, AVG_HANDLING_TIME, CALL_VOLUME
 
 # Data provided
 arrival_rate_urgent = CALL_VOLUME
@@ -86,3 +86,4 @@ if __name__ == "__main__":
     # Display staffing needs for each day
     for day, needs in staffing_needs.items():
         print(f"\n{day} staffing needs: {needs}")
+ 
