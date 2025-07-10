@@ -1,19 +1,9 @@
 import numpy as np
-import logging  # Add this import
+from services.logging_config import setup_logger
 from pyworkforce.queuing import ErlangC
 from config_variables.config import SHIFT_HOURS, AVG_HANDLING_TIME, CALL_VOLUME
 
-# Configure basic logging
-logging.basicConfig(
-    level=logging.INFO,  # Set logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler("logs/erlang_staffing.log"),  
-    ]
-)
-
-# Create a logger for this module
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 # Data provided
 arrival_rate_urgent = CALL_VOLUME
@@ -24,7 +14,7 @@ MINUTES_PER_HOUR = 60
 SHIFT_IN_PATTERN = HOURS_PER_DAY // SHIFT_HOURS  # Number of shift pattern to cover a full day according to SHIFT_HOURS
 WORKDAYS_PER_WEEK = 6
 SLA = 0.8 # Service level agreement target (e.g., 80% of calls answered within target time) 
-AVERAGE_SPEED_OF_ANSWER = 0.3  # Average speed of answer in minutes (e.g., 0.3 minutes or 18 seconds)
+AVERAGE_SPEED_OF_ANSWER = 0.33  # Average speed of answer in minutes (e.g., 0.33 minutes or 20 seconds)
 
 
 def calculate_required_staff(arrival_rate, service_time_minutes=AVG_HANDLING_TIME, target_wait_probability=SLA):

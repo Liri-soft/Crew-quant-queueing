@@ -1,10 +1,10 @@
 import services.shift_optimizer as shift_optimizer
 import services.erlang_staffing as erlang_staffing
 import matplotlib.pyplot as plt
-import logging
+from services.logging_config import setup_logger
 from services.erlang_staffing import arrival_rate_urgent  # Import call volume data
 
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 def find_ideal_shift_pattern(staffing_needs):
     """
@@ -16,18 +16,24 @@ def find_ideal_shift_pattern(staffing_needs):
     Returns:
     dict: Information about the optimal pattern and its weekly resource requirements
     """
+    logger.info("Starting ideal shift pattern calculation")
+
     all_patterns = shift_optimizer.generate_shift_patterns()
+    logger.info(f"Generated {len(all_patterns)} shift patterns to evaluate")
+
     weekly_pattern_stats = []
     
     # For each pattern, calculate total resources needed across all days
     for pattern in all_patterns:
         pattern_number = pattern['pattern_number']
+        logger.debug(f"Evaluating pattern {pattern_number}")
         total_weekly_agents = 0
         total_weekly_hours = 0
         daily_stats = []
         
         # Evaluate this pattern for each day
         for day in erlang_staffing.DAYS_OF_WEEK:
+            logger.debug(f"Evaluating pattern {pattern_number} against {day} staffing needs")
             evaluated_pattern = shift_optimizer.evaluate_shift_pattern(
                 pattern, staffing_needs[day])
             
@@ -39,6 +45,9 @@ def find_ideal_shift_pattern(staffing_needs):
             total_staff_hours = sum(staffing_needs[day])
             utilization = (total_staff_hours / evaluated_pattern['total_agent_hours']) * 100 if evaluated_pattern['total_agent_hours'] > 0 else 0
             
+            logger.debug(f"Pattern {pattern_number} for {day}: {evaluated_pattern['total_agents']} agents, " 
+                         f"{evaluated_pattern['total_agent_hours']} hours, {utilization:.1f}% utilization")
+            
             # Store daily data
             daily_stats.append({
                 'day': day,
@@ -47,6 +56,9 @@ def find_ideal_shift_pattern(staffing_needs):
                 'utilization': round(utilization, 1),
                 'shifts': evaluated_pattern['shifts']
             })
+        
+        logger.info(f"Pattern {pattern_number} evaluation complete: {total_weekly_agents} total agents, "
+                   f"{total_weekly_hours} total agent hours")
         
         # Store pattern summary
         weekly_pattern_stats.append({
@@ -60,6 +72,9 @@ def find_ideal_shift_pattern(staffing_needs):
     
     # Find the optimal pattern (minimizing total agent hours)
     optimal_pattern = min(weekly_pattern_stats, key=lambda p: p['total_weekly_hours'])
+    logger.info(f"Found optimal pattern: Pattern {optimal_pattern['pattern_number']} with "
+                   f"{optimal_pattern['total_weekly_hours']} total hours and "
+                   f"{optimal_pattern['avg_utilization']}% average utilization")
     return optimal_pattern
 
 

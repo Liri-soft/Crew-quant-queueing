@@ -1,11 +1,11 @@
 import services.erlang_staffing as erlang_staffing
 import copy
-import logging
+from services.logging_config import setup_logger
 from services.erlang_staffing import SHIFT_HOURS
 
 
 # Configure logger for this module
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     """

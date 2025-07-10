@@ -1,0 +1,295 @@
+2025-07-10 17:09:22,366 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-10 17:09:22,380 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-10 17:09:22,380 - services.ideal_shift - DEBUG - Evaluating pattern 0
+2025-07-10 17:09:22,381 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Sunday staffing needs
+2025-07-10 17:09:22,384 - services.ideal_shift - DEBUG - Pattern 0 for Sunday: 53 agents, 424 hours, 54.0% utilization
+2025-07-10 17:09:22,385 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Monday staffing needs
+2025-07-10 17:09:22,389 - services.ideal_shift - DEBUG - Pattern 0 for Monday: 106 agents, 848 hours, 49.5% utilization
+2025-07-10 17:09:22,394 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Tuesday staffing needs
+2025-07-10 17:09:22,398 - services.ideal_shift - DEBUG - Pattern 0 for Tuesday: 94 agents, 752 hours, 50.3% utilization
+2025-07-10 17:09:22,398 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Wednesday staffing needs
+2025-07-10 17:09:22,402 - services.ideal_shift - DEBUG - Pattern 0 for Wednesday: 100 agents, 800 hours, 50.6% utilization
+2025-07-10 17:09:22,402 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Thursday staffing needs
+2025-07-10 17:09:22,408 - services.ideal_shift - DEBUG - Pattern 0 for Thursday: 95 agents, 760 hours, 50.4% utilization
+2025-07-10 17:09:22,408 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Friday staffing needs
+2025-07-10 17:09:22,413 - services.ideal_shift - DEBUG - Pattern 0 for Friday: 99 agents, 792 hours, 50.1% utilization
+2025-07-10 17:09:22,414 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Saturday staffing needs
+2025-07-10 17:09:22,418 - services.ideal_shift - DEBUG - Pattern 0 for Saturday: 109 agents, 872 hours, 50.8% utilization
+2025-07-10 17:09:22,419 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
+2025-07-10 17:09:22,419 - services.ideal_shift - DEBUG - Evaluating pattern 1
+2025-07-10 17:09:22,419 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Sunday staffing needs
+2025-07-10 17:09:22,425 - services.ideal_shift - DEBUG - Pattern 1 for Sunday: 50 agents, 400 hours, 57.2% utilization
+2025-07-10 17:09:22,426 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Monday staffing needs
+2025-07-10 17:09:22,433 - services.ideal_shift - DEBUG - Pattern 1 for Monday: 99 agents, 792 hours, 53.0% utilization
+2025-07-10 17:09:22,433 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Tuesday staffing needs
+2025-07-10 17:09:22,437 - services.ideal_shift - DEBUG - Pattern 1 for Tuesday: 87 agents, 696 hours, 54.3% utilization
+2025-07-10 17:09:22,438 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Wednesday staffing needs
+2025-07-10 17:09:22,443 - services.ideal_shift - DEBUG - Pattern 1 for Wednesday: 92 agents, 736 hours, 55.0% utilization
+2025-07-10 17:09:22,444 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Thursday staffing needs
+2025-07-10 17:09:22,448 - services.ideal_shift - DEBUG - Pattern 1 for Thursday: 88 agents, 704 hours, 54.4% utilization
+2025-07-10 17:09:22,448 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Friday staffing needs
+2025-07-10 17:09:22,452 - services.ideal_shift - DEBUG - Pattern 1 for Friday: 91 agents, 728 hours, 54.5% utilization
+2025-07-10 17:09:22,452 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Saturday staffing needs
+2025-07-10 17:09:22,457 - services.ideal_shift - DEBUG - Pattern 1 for Saturday: 105 agents, 840 hours, 52.7% utilization
+2025-07-10 17:09:22,457 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
+2025-07-10 17:09:22,457 - services.ideal_shift - DEBUG - Evaluating pattern 2
+2025-07-10 17:09:22,458 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Sunday staffing needs
+2025-07-10 17:09:22,462 - services.ideal_shift - DEBUG - Pattern 2 for Sunday: 49 agents, 392 hours, 58.4% utilization
+2025-07-10 17:09:22,462 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Monday staffing needs
+2025-07-10 17:09:22,466 - services.ideal_shift - DEBUG - Pattern 2 for Monday: 92 agents, 736 hours, 57.1% utilization
+2025-07-10 17:09:22,466 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Tuesday staffing needs
+2025-07-10 17:09:22,470 - services.ideal_shift - DEBUG - Pattern 2 for Tuesday: 82 agents, 656 hours, 57.6% utilization
+2025-07-10 17:09:22,470 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Wednesday staffing needs
+2025-07-10 17:09:22,474 - services.ideal_shift - DEBUG - Pattern 2 for Wednesday: 87 agents, 696 hours, 58.2% utilization
+2025-07-10 17:09:22,475 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Thursday staffing needs
+2025-07-10 17:09:22,479 - services.ideal_shift - DEBUG - Pattern 2 for Thursday: 83 agents, 664 hours, 57.7% utilization
+2025-07-10 17:09:22,480 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Friday staffing needs
+2025-07-10 17:09:22,484 - services.ideal_shift - DEBUG - Pattern 2 for Friday: 83 agents, 664 hours, 59.8% utilization
+2025-07-10 17:09:22,484 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Saturday staffing needs
+2025-07-10 17:09:22,488 - services.ideal_shift - DEBUG - Pattern 2 for Saturday: 96 agents, 768 hours, 57.7% utilization
+2025-07-10 17:09:22,488 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
+2025-07-10 17:09:22,489 - services.ideal_shift - DEBUG - Evaluating pattern 3
+2025-07-10 17:09:22,489 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Sunday staffing needs
+2025-07-10 17:09:22,493 - services.ideal_shift - DEBUG - Pattern 3 for Sunday: 51 agents, 408 hours, 56.1% utilization
+2025-07-10 17:09:22,494 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Monday staffing needs
+2025-07-10 17:09:22,498 - services.ideal_shift - DEBUG - Pattern 3 for Monday: 88 agents, 704 hours, 59.7% utilization
+2025-07-10 17:09:22,498 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Tuesday staffing needs
+2025-07-10 17:09:22,502 - services.ideal_shift - DEBUG - Pattern 3 for Tuesday: 81 agents, 648 hours, 58.3% utilization
+2025-07-10 17:09:22,502 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Wednesday staffing needs
+2025-07-10 17:09:22,506 - services.ideal_shift - DEBUG - Pattern 3 for Wednesday: 85 agents, 680 hours, 59.6% utilization
+2025-07-10 17:09:22,506 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Thursday staffing needs
+2025-07-10 17:09:22,510 - services.ideal_shift - DEBUG - Pattern 3 for Thursday: 83 agents, 664 hours, 57.7% utilization
+2025-07-10 17:09:22,510 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Friday staffing needs
+2025-07-10 17:09:22,514 - services.ideal_shift - DEBUG - Pattern 3 for Friday: 86 agents, 688 hours, 57.7% utilization
+2025-07-10 17:09:22,515 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Saturday staffing needs
+2025-07-10 17:09:22,518 - services.ideal_shift - DEBUG - Pattern 3 for Saturday: 92 agents, 736 hours, 60.2% utilization
+2025-07-10 17:09:22,518 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-10 17:09:22,519 - services.ideal_shift - DEBUG - Evaluating pattern 4
+2025-07-10 17:09:22,519 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Sunday staffing needs
+2025-07-10 17:09:22,523 - services.ideal_shift - DEBUG - Pattern 4 for Sunday: 57 agents, 456 hours, 50.2% utilization
+2025-07-10 17:09:22,524 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Monday staffing needs
+2025-07-10 17:09:22,527 - services.ideal_shift - DEBUG - Pattern 4 for Monday: 92 agents, 736 hours, 57.1% utilization
+2025-07-10 17:09:22,528 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Tuesday staffing needs
+2025-07-10 17:09:22,532 - services.ideal_shift - DEBUG - Pattern 4 for Tuesday: 86 agents, 688 hours, 54.9% utilization
+2025-07-10 17:09:22,532 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Wednesday staffing needs
+2025-07-10 17:09:22,536 - services.ideal_shift - DEBUG - Pattern 4 for Wednesday: 89 agents, 712 hours, 56.9% utilization
+2025-07-10 17:09:22,536 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Thursday staffing needs
+2025-07-10 17:09:22,541 - services.ideal_shift - DEBUG - Pattern 4 for Thursday: 88 agents, 704 hours, 54.4% utilization
+2025-07-10 17:09:22,541 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Friday staffing needs
+2025-07-10 17:09:22,544 - services.ideal_shift - DEBUG - Pattern 4 for Friday: 90 agents, 720 hours, 55.1% utilization
+2025-07-10 17:09:22,545 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Saturday staffing needs
+2025-07-10 17:09:22,548 - services.ideal_shift - DEBUG - Pattern 4 for Saturday: 101 agents, 808 hours, 54.8% utilization
+2025-07-10 17:09:22,549 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
+2025-07-10 17:09:22,549 - services.ideal_shift - DEBUG - Evaluating pattern 5
+2025-07-10 17:09:22,549 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Sunday staffing needs
+2025-07-10 17:09:22,553 - services.ideal_shift - DEBUG - Pattern 5 for Sunday: 65 agents, 520 hours, 44.0% utilization
+2025-07-10 17:09:22,553 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Monday staffing needs
+2025-07-10 17:09:22,557 - services.ideal_shift - DEBUG - Pattern 5 for Monday: 105 agents, 840 hours, 50.0% utilization
+2025-07-10 17:09:22,558 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Tuesday staffing needs
+2025-07-10 17:09:22,563 - services.ideal_shift - DEBUG - Pattern 5 for Tuesday: 97 agents, 776 hours, 48.7% utilization
+2025-07-10 17:09:22,563 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Wednesday staffing needs
+2025-07-10 17:09:22,567 - services.ideal_shift - DEBUG - Pattern 5 for Wednesday: 102 agents, 816 hours, 49.6% utilization
+2025-07-10 17:09:22,567 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Thursday staffing needs
+2025-07-10 17:09:22,572 - services.ideal_shift - DEBUG - Pattern 5 for Thursday: 100 agents, 800 hours, 47.9% utilization
+2025-07-10 17:09:22,572 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Friday staffing needs
+2025-07-10 17:09:22,576 - services.ideal_shift - DEBUG - Pattern 5 for Friday: 99 agents, 792 hours, 50.1% utilization
+2025-07-10 17:09:22,576 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Saturday staffing needs
+2025-07-10 17:09:22,580 - services.ideal_shift - DEBUG - Pattern 5 for Saturday: 114 agents, 912 hours, 48.6% utilization
+2025-07-10 17:09:22,581 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
+2025-07-10 17:09:22,581 - services.ideal_shift - DEBUG - Evaluating pattern 6
+2025-07-10 17:09:22,581 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Sunday staffing needs
+2025-07-10 17:09:22,585 - services.ideal_shift - DEBUG - Pattern 6 for Sunday: 64 agents, 512 hours, 44.7% utilization
+2025-07-10 17:09:22,585 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Monday staffing needs
+2025-07-10 17:09:22,590 - services.ideal_shift - DEBUG - Pattern 6 for Monday: 120 agents, 960 hours, 43.8% utilization
+2025-07-10 17:09:22,590 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Tuesday staffing needs
+2025-07-10 17:09:22,594 - services.ideal_shift - DEBUG - Pattern 6 for Tuesday: 107 agents, 856 hours, 44.2% utilization
+2025-07-10 17:09:22,594 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Wednesday staffing needs
+2025-07-10 17:09:22,598 - services.ideal_shift - DEBUG - Pattern 6 for Wednesday: 111 agents, 888 hours, 45.6% utilization
+2025-07-10 17:09:22,598 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Thursday staffing needs
+2025-07-10 17:09:22,602 - services.ideal_shift - DEBUG - Pattern 6 for Thursday: 110 agents, 880 hours, 43.5% utilization
+2025-07-10 17:09:22,602 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Friday staffing needs
+2025-07-10 17:09:22,606 - services.ideal_shift - DEBUG - Pattern 6 for Friday: 111 agents, 888 hours, 44.7% utilization
+2025-07-10 17:09:22,606 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Saturday staffing needs
+2025-07-10 17:09:22,610 - services.ideal_shift - DEBUG - Pattern 6 for Saturday: 126 agents, 1008 hours, 43.9% utilization
+2025-07-10 17:09:22,611 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
+2025-07-10 17:09:22,611 - services.ideal_shift - DEBUG - Evaluating pattern 7
+2025-07-10 17:09:22,611 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Sunday staffing needs
+2025-07-10 17:09:22,615 - services.ideal_shift - DEBUG - Pattern 7 for Sunday: 58 agents, 464 hours, 49.4% utilization
+2025-07-10 17:09:22,615 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Monday staffing needs
+2025-07-10 17:09:22,619 - services.ideal_shift - DEBUG - Pattern 7 for Monday: 112 agents, 896 hours, 46.9% utilization
+2025-07-10 17:09:22,619 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Tuesday staffing needs
+2025-07-10 17:09:22,624 - services.ideal_shift - DEBUG - Pattern 7 for Tuesday: 101 agents, 808 hours, 46.8% utilization
+2025-07-10 17:09:22,624 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Wednesday staffing needs
+2025-07-10 17:09:22,628 - services.ideal_shift - DEBUG - Pattern 7 for Wednesday: 105 agents, 840 hours, 48.2% utilization
+2025-07-10 17:09:22,628 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Thursday staffing needs
+2025-07-10 17:09:22,632 - services.ideal_shift - DEBUG - Pattern 7 for Thursday: 100 agents, 800 hours, 47.9% utilization
+2025-07-10 17:09:22,632 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Friday staffing needs
+2025-07-10 17:09:22,636 - services.ideal_shift - DEBUG - Pattern 7 for Friday: 105 agents, 840 hours, 47.3% utilization
+2025-07-10 17:09:22,636 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Saturday staffing needs
+2025-07-10 17:09:22,641 - services.ideal_shift - DEBUG - Pattern 7 for Saturday: 121 agents, 968 hours, 45.8% utilization
+2025-07-10 17:09:22,641 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
+2025-07-10 17:09:22,642 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
+2025-07-10 17:16:34,145 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-10 17:16:34,159 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-10 17:16:34,160 - services.ideal_shift - DEBUG - Evaluating pattern 0
+2025-07-10 17:16:34,160 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Sunday staffing needs
+2025-07-10 17:16:34,164 - services.ideal_shift - DEBUG - Pattern 0 for Sunday: 53 agents, 424 hours, 54.0% utilization
+2025-07-10 17:16:34,165 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Monday staffing needs
+2025-07-10 17:16:34,168 - services.ideal_shift - DEBUG - Pattern 0 for Monday: 106 agents, 848 hours, 49.5% utilization
+2025-07-10 17:16:34,168 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Tuesday staffing needs
+2025-07-10 17:16:34,170 - services.ideal_shift - DEBUG - Pattern 0 for Tuesday: 94 agents, 752 hours, 50.3% utilization
+2025-07-10 17:16:34,170 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Wednesday staffing needs
+2025-07-10 17:16:34,174 - services.ideal_shift - DEBUG - Pattern 0 for Wednesday: 100 agents, 800 hours, 50.6% utilization
+2025-07-10 17:16:34,174 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Thursday staffing needs
+2025-07-10 17:16:34,178 - services.ideal_shift - DEBUG - Pattern 0 for Thursday: 95 agents, 760 hours, 50.4% utilization
+2025-07-10 17:16:34,178 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Friday staffing needs
+2025-07-10 17:16:34,182 - services.ideal_shift - DEBUG - Pattern 0 for Friday: 99 agents, 792 hours, 50.1% utilization
+2025-07-10 17:16:34,182 - services.ideal_shift - DEBUG - Evaluating pattern 0 against Saturday staffing needs
+2025-07-10 17:16:34,186 - services.ideal_shift - DEBUG - Pattern 0 for Saturday: 109 agents, 872 hours, 50.8% utilization
+2025-07-10 17:16:34,186 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
+2025-07-10 17:16:34,186 - services.ideal_shift - DEBUG - Evaluating pattern 1
+2025-07-10 17:16:34,186 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Sunday staffing needs
+2025-07-10 17:16:34,190 - services.ideal_shift - DEBUG - Pattern 1 for Sunday: 50 agents, 400 hours, 57.2% utilization
+2025-07-10 17:16:34,190 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Monday staffing needs
+2025-07-10 17:16:34,194 - services.ideal_shift - DEBUG - Pattern 1 for Monday: 99 agents, 792 hours, 53.0% utilization
+2025-07-10 17:16:34,194 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Tuesday staffing needs
+2025-07-10 17:16:34,197 - services.ideal_shift - DEBUG - Pattern 1 for Tuesday: 87 agents, 696 hours, 54.3% utilization
+2025-07-10 17:16:34,198 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Wednesday staffing needs
+2025-07-10 17:16:34,201 - services.ideal_shift - DEBUG - Pattern 1 for Wednesday: 92 agents, 736 hours, 55.0% utilization
+2025-07-10 17:16:34,201 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Thursday staffing needs
+2025-07-10 17:16:34,204 - services.ideal_shift - DEBUG - Pattern 1 for Thursday: 88 agents, 704 hours, 54.4% utilization
+2025-07-10 17:16:34,204 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Friday staffing needs
+2025-07-10 17:16:34,207 - services.ideal_shift - DEBUG - Pattern 1 for Friday: 91 agents, 728 hours, 54.5% utilization
+2025-07-10 17:16:34,207 - services.ideal_shift - DEBUG - Evaluating pattern 1 against Saturday staffing needs
+2025-07-10 17:16:34,211 - services.ideal_shift - DEBUG - Pattern 1 for Saturday: 105 agents, 840 hours, 52.7% utilization
+2025-07-10 17:16:34,212 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
+2025-07-10 17:16:34,212 - services.ideal_shift - DEBUG - Evaluating pattern 2
+2025-07-10 17:16:34,213 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Sunday staffing needs
+2025-07-10 17:16:34,216 - services.ideal_shift - DEBUG - Pattern 2 for Sunday: 49 agents, 392 hours, 58.4% utilization
+2025-07-10 17:16:34,216 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Monday staffing needs
+2025-07-10 17:16:34,219 - services.ideal_shift - DEBUG - Pattern 2 for Monday: 92 agents, 736 hours, 57.1% utilization
+2025-07-10 17:16:34,220 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Tuesday staffing needs
+2025-07-10 17:16:34,222 - services.ideal_shift - DEBUG - Pattern 2 for Tuesday: 82 agents, 656 hours, 57.6% utilization
+2025-07-10 17:16:34,222 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Wednesday staffing needs
+2025-07-10 17:16:34,225 - services.ideal_shift - DEBUG - Pattern 2 for Wednesday: 87 agents, 696 hours, 58.2% utilization
+2025-07-10 17:16:34,225 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Thursday staffing needs
+2025-07-10 17:16:34,230 - services.ideal_shift - DEBUG - Pattern 2 for Thursday: 83 agents, 664 hours, 57.7% utilization
+2025-07-10 17:16:34,230 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Friday staffing needs
+2025-07-10 17:16:34,233 - services.ideal_shift - DEBUG - Pattern 2 for Friday: 83 agents, 664 hours, 59.8% utilization
+2025-07-10 17:16:34,233 - services.ideal_shift - DEBUG - Evaluating pattern 2 against Saturday staffing needs
+2025-07-10 17:16:34,236 - services.ideal_shift - DEBUG - Pattern 2 for Saturday: 96 agents, 768 hours, 57.7% utilization
+2025-07-10 17:16:34,236 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
+2025-07-10 17:16:34,236 - services.ideal_shift - DEBUG - Evaluating pattern 3
+2025-07-10 17:16:34,237 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Sunday staffing needs
+2025-07-10 17:16:34,239 - services.ideal_shift - DEBUG - Pattern 3 for Sunday: 51 agents, 408 hours, 56.1% utilization
+2025-07-10 17:16:34,240 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Monday staffing needs
+2025-07-10 17:16:34,243 - services.ideal_shift - DEBUG - Pattern 3 for Monday: 88 agents, 704 hours, 59.7% utilization
+2025-07-10 17:16:34,243 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Tuesday staffing needs
+2025-07-10 17:16:34,249 - services.ideal_shift - DEBUG - Pattern 3 for Tuesday: 81 agents, 648 hours, 58.3% utilization
+2025-07-10 17:16:34,249 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Wednesday staffing needs
+2025-07-10 17:16:34,252 - services.ideal_shift - DEBUG - Pattern 3 for Wednesday: 85 agents, 680 hours, 59.6% utilization
+2025-07-10 17:16:34,252 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Thursday staffing needs
+2025-07-10 17:16:34,255 - services.ideal_shift - DEBUG - Pattern 3 for Thursday: 83 agents, 664 hours, 57.7% utilization
+2025-07-10 17:16:34,255 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Friday staffing needs
+2025-07-10 17:16:34,259 - services.ideal_shift - DEBUG - Pattern 3 for Friday: 86 agents, 688 hours, 57.7% utilization
+2025-07-10 17:16:34,259 - services.ideal_shift - DEBUG - Evaluating pattern 3 against Saturday staffing needs
+2025-07-10 17:16:34,263 - services.ideal_shift - DEBUG - Pattern 3 for Saturday: 92 agents, 736 hours, 60.2% utilization
+2025-07-10 17:16:34,263 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-10 17:16:34,263 - services.ideal_shift - DEBUG - Evaluating pattern 4
+2025-07-10 17:16:34,264 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Sunday staffing needs
+2025-07-10 17:16:34,267 - services.ideal_shift - DEBUG - Pattern 4 for Sunday: 57 agents, 456 hours, 50.2% utilization
+2025-07-10 17:16:34,268 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Monday staffing needs
+2025-07-10 17:16:34,270 - services.ideal_shift - DEBUG - Pattern 4 for Monday: 92 agents, 736 hours, 57.1% utilization
+2025-07-10 17:16:34,271 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Tuesday staffing needs
+2025-07-10 17:16:34,274 - services.ideal_shift - DEBUG - Pattern 4 for Tuesday: 86 agents, 688 hours, 54.9% utilization
+2025-07-10 17:16:34,274 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Wednesday staffing needs
+2025-07-10 17:16:34,278 - services.ideal_shift - DEBUG - Pattern 4 for Wednesday: 89 agents, 712 hours, 56.9% utilization
+2025-07-10 17:16:34,278 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Thursday staffing needs
+2025-07-10 17:16:34,281 - services.ideal_shift - DEBUG - Pattern 4 for Thursday: 88 agents, 704 hours, 54.4% utilization
+2025-07-10 17:16:34,282 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Friday staffing needs
+2025-07-10 17:16:34,285 - services.ideal_shift - DEBUG - Pattern 4 for Friday: 90 agents, 720 hours, 55.1% utilization
+2025-07-10 17:16:34,285 - services.ideal_shift - DEBUG - Evaluating pattern 4 against Saturday staffing needs
+2025-07-10 17:16:34,288 - services.ideal_shift - DEBUG - Pattern 4 for Saturday: 101 agents, 808 hours, 54.8% utilization
+2025-07-10 17:16:34,288 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
+2025-07-10 17:16:34,288 - services.ideal_shift - DEBUG - Evaluating pattern 5
+2025-07-10 17:16:34,289 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Sunday staffing needs
+2025-07-10 17:16:34,291 - services.ideal_shift - DEBUG - Pattern 5 for Sunday: 65 agents, 520 hours, 44.0% utilization
+2025-07-10 17:16:34,292 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Monday staffing needs
+2025-07-10 17:16:34,296 - services.ideal_shift - DEBUG - Pattern 5 for Monday: 105 agents, 840 hours, 50.0% utilization
+2025-07-10 17:16:34,297 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Tuesday staffing needs
+2025-07-10 17:16:34,300 - services.ideal_shift - DEBUG - Pattern 5 for Tuesday: 97 agents, 776 hours, 48.7% utilization
+2025-07-10 17:16:34,300 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Wednesday staffing needs
+2025-07-10 17:16:34,303 - services.ideal_shift - DEBUG - Pattern 5 for Wednesday: 102 agents, 816 hours, 49.6% utilization
+2025-07-10 17:16:34,303 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Thursday staffing needs
+2025-07-10 17:16:34,306 - services.ideal_shift - DEBUG - Pattern 5 for Thursday: 100 agents, 800 hours, 47.9% utilization
+2025-07-10 17:16:34,306 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Friday staffing needs
+2025-07-10 17:16:34,309 - services.ideal_shift - DEBUG - Pattern 5 for Friday: 99 agents, 792 hours, 50.1% utilization
+2025-07-10 17:16:34,310 - services.ideal_shift - DEBUG - Evaluating pattern 5 against Saturday staffing needs
+2025-07-10 17:16:34,313 - services.ideal_shift - DEBUG - Pattern 5 for Saturday: 114 agents, 912 hours, 48.6% utilization
+2025-07-10 17:16:34,313 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
+2025-07-10 17:16:34,314 - services.ideal_shift - DEBUG - Evaluating pattern 6
+2025-07-10 17:16:34,314 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Sunday staffing needs
+2025-07-10 17:16:34,318 - services.ideal_shift - DEBUG - Pattern 6 for Sunday: 64 agents, 512 hours, 44.7% utilization
+2025-07-10 17:16:34,318 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Monday staffing needs
+2025-07-10 17:16:34,321 - services.ideal_shift - DEBUG - Pattern 6 for Monday: 120 agents, 960 hours, 43.8% utilization
+2025-07-10 17:16:34,321 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Tuesday staffing needs
+2025-07-10 17:16:34,324 - services.ideal_shift - DEBUG - Pattern 6 for Tuesday: 107 agents, 856 hours, 44.2% utilization
+2025-07-10 17:16:34,324 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Wednesday staffing needs
+2025-07-10 17:16:34,328 - services.ideal_shift - DEBUG - Pattern 6 for Wednesday: 111 agents, 888 hours, 45.6% utilization
+2025-07-10 17:16:34,328 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Thursday staffing needs
+2025-07-10 17:16:34,331 - services.ideal_shift - DEBUG - Pattern 6 for Thursday: 110 agents, 880 hours, 43.5% utilization
+2025-07-10 17:16:34,332 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Friday staffing needs
+2025-07-10 17:16:34,334 - services.ideal_shift - DEBUG - Pattern 6 for Friday: 111 agents, 888 hours, 44.7% utilization
+2025-07-10 17:16:34,335 - services.ideal_shift - DEBUG - Evaluating pattern 6 against Saturday staffing needs
+2025-07-10 17:16:34,337 - services.ideal_shift - DEBUG - Pattern 6 for Saturday: 126 agents, 1008 hours, 43.9% utilization
+2025-07-10 17:16:34,338 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
+2025-07-10 17:16:34,338 - services.ideal_shift - DEBUG - Evaluating pattern 7
+2025-07-10 17:16:34,338 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Sunday staffing needs
+2025-07-10 17:16:34,341 - services.ideal_shift - DEBUG - Pattern 7 for Sunday: 58 agents, 464 hours, 49.4% utilization
+2025-07-10 17:16:34,341 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Monday staffing needs
+2025-07-10 17:16:34,345 - services.ideal_shift - DEBUG - Pattern 7 for Monday: 112 agents, 896 hours, 46.9% utilization
+2025-07-10 17:16:34,346 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Tuesday staffing needs
+2025-07-10 17:16:34,349 - services.ideal_shift - DEBUG - Pattern 7 for Tuesday: 101 agents, 808 hours, 46.8% utilization
+2025-07-10 17:16:34,349 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Wednesday staffing needs
+2025-07-10 17:16:34,353 - services.ideal_shift - DEBUG - Pattern 7 for Wednesday: 105 agents, 840 hours, 48.2% utilization
+2025-07-10 17:16:34,353 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Thursday staffing needs
+2025-07-10 17:16:34,356 - services.ideal_shift - DEBUG - Pattern 7 for Thursday: 100 agents, 800 hours, 47.9% utilization
+2025-07-10 17:16:34,356 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Friday staffing needs
+2025-07-10 17:16:34,359 - services.ideal_shift - DEBUG - Pattern 7 for Friday: 105 agents, 840 hours, 47.3% utilization
+2025-07-10 17:16:34,359 - services.ideal_shift - DEBUG - Evaluating pattern 7 against Saturday staffing needs
+2025-07-10 17:16:34,364 - services.ideal_shift - DEBUG - Pattern 7 for Saturday: 121 agents, 968 hours, 45.8% utilization
+2025-07-10 17:16:34,364 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
+2025-07-10 17:16:34,364 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
+2025-07-10 17:33:38,179 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-10 17:33:38,180 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-10 17:33:38,185 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
+2025-07-10 17:33:38,191 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
+2025-07-10 17:33:38,197 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
+2025-07-10 17:33:38,203 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-10 17:33:38,210 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
+2025-07-10 17:33:38,215 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
+2025-07-10 17:33:38,220 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
+2025-07-10 17:33:38,227 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
+2025-07-10 17:33:38,227 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
+2025-07-10 17:44:28,979 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-10 17:44:28,980 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-10 17:44:28,984 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
+2025-07-10 17:44:28,987 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
+2025-07-10 17:44:28,993 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
+2025-07-10 17:44:28,997 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-10 17:44:29,002 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
+2025-07-10 17:44:29,007 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
+2025-07-10 17:44:29,011 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
+2025-07-10 17:44:29,014 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
+2025-07-10 17:44:29,015 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
+2025-07-10 17:51:59,956 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-10 17:51:59,957 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-10 17:51:59,960 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
+2025-07-10 17:51:59,963 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
+2025-07-10 17:51:59,966 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
+2025-07-10 17:51:59,970 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-10 17:51:59,974 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
+2025-07-10 17:51:59,978 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
+2025-07-10 17:51:59,981 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
+2025-07-10 17:51:59,984 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
+2025-07-10 17:51:59,985 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization

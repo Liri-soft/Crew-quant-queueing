@@ -1,12 +1,19 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Dict, List, Any
 from fastapi.responses import FileResponse
+import importlib
 import os
+import copy
 import services.shift_optimizer
 import services.ideal_shift
 import services.shift_simulation
+import services.erlang_staffing
 import services.create_excel_report
+from services.logging_config import setup_logger
+
+# Set up logger for this module
+logger = setup_logger(__name__)
 
 router = APIRouter()
 
@@ -25,6 +32,10 @@ class ConfigInput(BaseModel):
     LUNCH_BREAK_TIME: int
     MAX_PERCENTAGE_AGENTS_ON_BREAK: int
 
+@router.get("/")
+def read_root():
+    """Root endpoint to check if the API is running"""
+    return {"message": "Welcome to the Crew Quant Queueing API!"}
 
 @router.get("/download-excel")
 def download_excel():
@@ -38,31 +49,37 @@ def download_excel():
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
     else:
-        return {"error": "Excel file not found. Run simulation first."}
+        logger.error("Excel file not found. Run simulation first.")
+        raise HTTPException(status_code=404, detail="Excel file not found. Run simulation first.")
 
 
 @router.post("/simulate")
 def simulate(config: ConfigInput):
     # Patch config values in memory
-    import config_variables.config as config_module
-    config_module.CALL_VOLUME = config.CALL_VOLUME
-    config_module.SHIFT_HOURS = config.SHIFT_HOURS
-    config_module.AGENT_EFFICIENCY = config.AGENT_EFFICIENCY
-    config_module.AVG_HANDLING_TIME = config.AVG_HANDLING_TIME
-    config_module.AVG_PATIENCE = config.AVG_PATIENCE
-    config_module.TARGET_SLA = config.TARGET_SLA
-    config_module.DESIRED_SLA = config.DESIRED_SLA
-    config_module.CALL_COMPLEXITY_DISTRIBUTION = config.CALL_COMPLEXITY_DISTRIBUTION
-    config_module.ACW_MIN = config.ACW_MIN
-    config_module.ACW_MAX = config.ACW_MAX
-    config_module.LUNCH_BREAK_TIME = config.LUNCH_BREAK_TIME
-    config_module.MAX_PERCENTAGE_AGENTS_ON_BREAK = config.MAX_PERCENTAGE_AGENTS_ON_BREAK
-
-    import importlib
-    importlib.reload(services.erlang_staffing)
-    importlib.reload(services.shift_optimizer)
-    importlib.reload(services.ideal_shift)
-    importlib.reload(services.shift_simulation)
+    try:
+        import config_variables.config as config_module
+        config_module.CALL_VOLUME = config.CALL_VOLUME
+        config_module.SHIFT_HOURS = config.SHIFT_HOURS
+        config_module.AGENT_EFFICIENCY = config.AGENT_EFFICIENCY
+        config_module.AVG_HANDLING_TIME = config.AVG_HANDLING_TIME
+        config_module.AVG_PATIENCE = config.AVG_PATIENCE
+        config_module.TARGET_SLA = config.TARGET_SLA
+        config_module.DESIRED_SLA = config.DESIRED_SLA
+        config_module.CALL_COMPLEXITY_DISTRIBUTION = config.CALL_COMPLEXITY_DISTRIBUTION
+        config_module.ACW_MIN = config.ACW_MIN
+        config_module.ACW_MAX = config.ACW_MAX
+        config_module.LUNCH_BREAK_TIME = config.LUNCH_BREAK_TIME
+        config_module.MAX_PERCENTAGE_AGENTS_ON_BREAK = config.MAX_PERCENTAGE_AGENTS_ON_BREAK
+            
+        importlib.reload(services.erlang_staffing)
+        importlib.reload(services.shift_optimizer)
+        importlib.reload(services.ideal_shift)
+        importlib.reload(services.shift_simulation)
+            
+        logger.info("Configuration values patched successfully")
+    except Exception as e:
+        logger.error(f"Error updating configuration: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Invalid configuration: {str(e)}")
 
     # Run the simulation pipeline
     staffing_needs = services.erlang_staffing.calculate_hourly_staffing_needs()
@@ -82,7 +99,11 @@ def simulate(config: ConfigInput):
 
     simulation_results = services.shift_simulation.simulate_ideal_pattern(
         ideal_pattern)
+    
+    graph_data = copy.deepcopy(simulation_results)
 
+
+    # in final results, adding erlang_agents from erlang_results
     if 'erlang_results' in simulation_results and 'final_results' in simulation_results:
         # For each day and shift in final_results, add the erlang_agents value
         for day, day_shifts in simulation_results['final_results'].items():
@@ -124,6 +145,6 @@ def simulate(config: ConfigInput):
     # Return results as JSON
     return {
         "simulation_results": simulation_results['final_results'],
-        "graph_data": simulation_results,
+        "graph_data": graph_data,
         "excel_download_url": "/download-excel"
     }
