@@ -75,8 +75,7 @@ def simulate(config: ConfigInput):
     services.shift_optimizer.display_pattern_evaluations(
         all_patterns, staffing_needs)
 
-    ideal_pattern = services.ideal_shift.find_ideal_shift_pattern(
-        staffing_needs)
+    ideal_pattern = services.ideal_shift.find_ideal_shift_pattern(staffing_needs)
 
     # Display the ideal pattern
     services.ideal_shift.display_ideal_shift_pattern(ideal_pattern)
@@ -125,5 +124,6 @@ def simulate(config: ConfigInput):
     # Return results as JSON
     return {
         "simulation_results": simulation_results['final_results'],
+        "graph_data": simulation_results,
         "excel_download_url": "/download-excel"
     }

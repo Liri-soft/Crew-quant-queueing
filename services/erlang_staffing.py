@@ -1,6 +1,19 @@
 import numpy as np
+import logging  # Add this import
 from pyworkforce.queuing import ErlangC
 from config_variables.config import SHIFT_HOURS, AVG_HANDLING_TIME, CALL_VOLUME
+
+# Configure basic logging
+logging.basicConfig(
+    level=logging.INFO,  # Set logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logs/erlang_staffing.log"),  
+    ]
+)
+
+# Create a logger for this module
+logger = logging.getLogger(__name__)
 
 # Data provided
 arrival_rate_urgent = CALL_VOLUME
@@ -29,28 +42,34 @@ def calculate_required_staff(arrival_rate, service_time_minutes=AVG_HANDLING_TIM
     """
     # Skip calculation if arrival rate is 0
     if arrival_rate == 0:
+        logger.debug(f"Arrival rate is 0, returning 0 staff")
         return 0
 
-    # Set up the ErlangC model with our parameters
-    erlang = ErlangC(
-        transactions=arrival_rate,
-        aht=service_time_minutes,  # Average speed of answer target (seconds)
-        asa=AVERAGE_SPEED_OF_ANSWER,
-        interval=60,  # 60-minute interval (1 hour)
-        shrinkage=0  # Convert efficiency to shrinkage
-    )
+    try:
+        # Set up the ErlangC model with our parameters
+        logger.debug(f"Calculating staff for arrival rate {arrival_rate}, service time {service_time_minutes} min")
+        erlang = ErlangC(
+            transactions=arrival_rate,
+            aht=service_time_minutes,  # Average speed of answer target (seconds)
+            asa=AVERAGE_SPEED_OF_ANSWER,
+            interval=60,  # 60-minute interval (1 hour)
+            shrinkage=0  # Convert efficiency to shrinkage
+        )
 
-    # Calculate required positions for service level (1 - target_wait_probability)
-    # Convert wait probability to service level
+        # Calculate required positions for service level
+        result = erlang.required_positions(service_level=target_wait_probability)
 
-    result = erlang.required_positions(service_level=target_wait_probability)
+        # Get the positions needed from the result
+        agents_needed = result['positions']
 
-    # Get the positions needed from the result
-    # The result is a dictionary with 'positions' key
-    agents_needed = result['positions']
-
-    # Return the result as an integer, rounding up to ensure adequate staffing
-    return int(np.ceil(agents_needed))
+        # Return the result as an integer, rounding up to ensure adequate staffing
+        staff_count = int(np.ceil(agents_needed))
+        logger.debug(f"Calculated {staff_count} staff needed for arrival rate {arrival_rate}")
+        return staff_count
+        
+    except Exception as e:
+        logger.error(f"Error in Erlang C calculation: {str(e)}")
+        raise  # Re-raise the exception after logging
 
 
 def calculate_hourly_staffing_needs():
@@ -60,6 +79,7 @@ def calculate_hourly_staffing_needs():
     Returns:
     dict: Dictionary with staffing needs for each day and hour
     """
+    logger.info("Starting calculation of hourly staffing needs")
     staffing_needs = {}
 
     for day in DAYS_OF_WEEK:
@@ -69,21 +89,22 @@ def calculate_hourly_staffing_needs():
             required_staff = calculate_required_staff(
                 arrival, AVG_HANDLING_TIME)
             staffing_needs[day].append(required_staff)
+            logger.debug(f"{day}, Hour {hour}: {required_staff} staff needed for {arrival} calls")
 
-    # Print staffing needs
+    # Log staffing needs with INFO level
     for day in DAYS_OF_WEEK:
-        print(f"\n{day} staffing needs:")
-        for hour, staff in enumerate(staffing_needs[day]):
-            print(f"  Hour {hour}: {staff} staff needed")
+        logger.info(f"{day} staffing needs: {staffing_needs[day]}")
 
+    logger.info("Completed calculation of hourly staffing needs")
     return staffing_needs
 
 if __name__ == "__main__":
     # This allows the script to be run directly
-    print("Calculating staffing needs...")
-    staffing_needs = calculate_hourly_staffing_needs()
+    logger.info("Running erlang_staffing.py directly")
+    logger.info("Calculating staffing needs...")
     
-    # Display staffing needs for each day
-    for day, needs in staffing_needs.items():
-        print(f"\n{day} staffing needs: {needs}")
- 
+    try:
+        staffing_needs = calculate_hourly_staffing_needs()
+        logger.info("Staffing calculation completed successfully")
+    except Exception as e:
+        logger.critical(f"Failed to calculate staffing needs: {str(e)}")

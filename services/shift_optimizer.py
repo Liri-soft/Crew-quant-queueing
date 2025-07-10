@@ -1,7 +1,11 @@
 import services.erlang_staffing as erlang_staffing
 import copy
+import logging
 from services.erlang_staffing import SHIFT_HOURS
 
+
+# Configure logger for this module
+logger = logging.getLogger(__name__)
 
 def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     """
@@ -16,13 +20,16 @@ def generate_shift_patterns(shift_hours=SHIFT_HOURS):
     Each pattern starts at a different hour (0-7), and consists of three consecutive 8-hour shifts.
     For example, pattern 0 has shifts at 0:00-8:00, 8:00-16:00, and 16:00-0:00.
     """
+    logger.info(f"Generating shift patterns with shift_hours={shift_hours}")
     patterns = []
 
     # Calculate number of shifts needed to cover 24 hours
     shifts_per_day = erlang_staffing.HOURS_PER_DAY // shift_hours
+    logger.debug(f"Number of shifts per day: {shifts_per_day}")
 
     # We will consider 8 distinct patterns (starting at hours 0-7)
     for pattern_start in range(SHIFT_HOURS):
+        logger.debug(f"Creating pattern starting at hour {pattern_start}")
         pattern = []
 
         # For each shift in the pattern, calculate its start and end hours
@@ -53,6 +60,8 @@ def generate_shift_patterns(shift_hours=SHIFT_HOURS):
                 'shift_number': shift_index + 1  # 1, 2, or 3
             }
 
+            logger.debug(f"Created shift {shift_index + 1}: {start_hour:02d}:00-{end_hour:02d}:00, covering hours {hours_covered}")
+
             # Add this shift to the pattern
             pattern.append(shift)
 
@@ -61,7 +70,9 @@ def generate_shift_patterns(shift_hours=SHIFT_HOURS):
             'pattern_number': pattern_start,
             'shifts': pattern
         })
+        logger.debug(f"Completed pattern {pattern_start} with {len(pattern)} shifts")
 
+    logger.info(f"Successfully generated {len(patterns)} shift patterns")
     return patterns
 
 
@@ -79,9 +90,11 @@ def calculate_agents_needed(shift, staffing_needs_day):
     This function finds the peak staffing requirement for any hour covered by the shift.
     We need to staff according to the peak hour to ensure adequate coverage.
     """
+    logger.debug(f"Calculating agents needed for shift {shift['shift_number']} ({shift['start_hour']:02d}:00-{shift['end_hour']:02d}:00)")
     # Find the maximum staffing need for any hour in this shift
     agents_needed = max([staffing_needs_day[hour] for hour in shift['hours']])
-
+    
+    logger.debug(f"Peak staffing for this shift: {agents_needed} agents")
     return agents_needed
 
 
@@ -97,6 +110,7 @@ def evaluate_shift_pattern(pattern, staffing_needs_day):
     Returns:
     dict: The pattern with agents_needed, agent_hours added to each shift and total_agents, total_agent_hours fields
     """
+    logger.info(f"Evaluating pattern {pattern['pattern_number']} against staffing needs")
     total_agents = 0
     total_agent_hours = 0
     pattern_copy = copy.deepcopy(pattern)
@@ -114,10 +128,13 @@ def evaluate_shift_pattern(pattern, staffing_needs_day):
         pattern_copy['shifts'][i]['agent_hours'] = agent_hours
         total_agent_hours += agent_hours
 
+        logger.debug(f"Shift {shift['shift_number']} requires {agents} agents for {shift_length} hours = {agent_hours} agent hours")
+
     # Add total agents and agent hours to the pattern
     pattern_copy['total_agents'] = total_agents
     pattern_copy['total_agent_hours'] = total_agent_hours
-
+    
+    logger.info(f"Pattern {pattern['pattern_number']} evaluation complete: {total_agents} total agents, {total_agent_hours} total agent hours")
     return pattern_copy
 
 def display_shift_patterns(patterns):

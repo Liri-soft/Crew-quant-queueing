@@ -1,8 +1,10 @@
 import services.shift_optimizer as shift_optimizer
 import services.erlang_staffing as erlang_staffing
 import matplotlib.pyplot as plt
+import logging
 from services.erlang_staffing import arrival_rate_urgent  # Import call volume data
 
+logger = logging.getLogger(__name__)
 
 def find_ideal_shift_pattern(staffing_needs):
     """
@@ -14,7 +16,6 @@ def find_ideal_shift_pattern(staffing_needs):
     Returns:
     dict: Information about the optimal pattern and its weekly resource requirements
     """
-    print("\nAnalyzing patterns for consistent weekly scheduling...")
     all_patterns = shift_optimizer.generate_shift_patterns()
     weekly_pattern_stats = []
     
