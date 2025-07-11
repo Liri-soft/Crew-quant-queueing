@@ -1,9 +1,81 @@
-2025-07-10 17:51:59,898 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
-2025-07-10 17:51:59,902 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
-2025-07-10 17:51:59,902 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
-2025-07-10 17:51:59,902 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
-2025-07-10 17:51:59,903 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
-2025-07-10 17:51:59,903 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
-2025-07-10 17:51:59,903 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
-2025-07-10 17:51:59,903 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
-2025-07-10 17:51:59,904 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 13:00:18,123 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 13:00:18,128 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 13:00:18,129 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 13:00:18,129 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 13:00:18,129 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 13:00:18,131 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 13:00:18,131 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 13:00:18,131 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 13:00:18,132 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 13:40:07,763 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 13:40:07,770 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 13:40:07,770 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 13:40:07,771 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 13:40:07,772 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 13:40:07,773 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 13:40:07,774 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 13:40:07,774 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 13:40:07,775 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 14:54:17,095 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 14:54:17,104 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 14:54:17,105 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 14:54:17,105 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 14:54:17,105 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 14:54:17,106 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 14:54:17,106 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 14:54:17,106 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 14:54:17,106 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 14:54:36,540 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 14:54:36,543 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 14:54:36,544 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 14:54:36,544 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 14:54:36,544 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 14:54:36,545 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 14:54:36,545 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 14:54:36,545 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 14:54:36,546 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 15:04:47,657 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 15:04:47,664 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 15:04:47,664 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 15:04:47,665 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 15:04:47,665 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 15:04:47,665 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 15:04:47,665 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 15:04:47,666 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 15:04:47,666 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 15:05:03,374 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 15:05:03,382 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 15:05:03,382 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 15:05:03,382 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 15:05:03,383 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 15:05:03,384 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 15:05:03,384 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 15:05:03,385 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 15:05:03,385 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 15:15:33,726 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 15:15:33,730 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 15:15:33,731 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 15:15:33,731 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 15:15:33,731 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 15:15:33,732 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 15:15:33,732 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 15:15:33,732 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 15:15:33,733 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 15:18:23,011 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 15:18:23,015 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 15:18:23,016 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 15:18:23,016 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 15:18:23,016 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 15:18:23,017 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 15:18:23,017 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 15:18:23,017 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 15:18:23,018 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
+2025-07-11 15:19:05,876 - services.erlang_staffing - INFO - Starting calculation of hourly staffing needs
+2025-07-11 15:19:05,879 - services.erlang_staffing - INFO - Sunday staffing needs: [2, 2, 2, 2, 1, 2, 2, 2, 3, 6, 12, 19, 29, 33, 29, 23, 18, 14, 10, 6, 5, 3, 2, 2]
+2025-07-11 15:19:05,879 - services.erlang_staffing - INFO - Monday staffing needs: [2, 2, 1, 2, 2, 1, 2, 2, 3, 5, 12, 23, 40, 58, 57, 51, 46, 38, 29, 18, 11, 7, 5, 3]
+2025-07-11 15:19:05,879 - services.erlang_staffing - INFO - Tuesday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 7, 12, 23, 39, 53, 50, 45, 39, 31, 22, 16, 10, 5, 4, 3]
+2025-07-11 15:19:05,879 - services.erlang_staffing - INFO - Wednesday staffing needs: [2, 2, 2, 1, 1, 2, 2, 2, 3, 7, 13, 25, 42, 54, 53, 49, 44, 35, 26, 18, 10, 6, 4, 2]
+2025-07-11 15:19:05,880 - services.erlang_staffing - INFO - Thursday staffing needs: [2, 2, 2, 2, 2, 2, 2, 2, 3, 6, 13, 24, 41, 54, 52, 44, 39, 31, 23, 16, 10, 5, 4, 2]
+2025-07-11 15:19:05,880 - services.erlang_staffing - INFO - Friday staffing needs: [2, 2, 1, 2, 0, 2, 2, 2, 3, 5, 15, 26, 39, 53, 54, 48, 43, 34, 24, 17, 10, 6, 4, 3]
+2025-07-11 15:19:05,880 - services.erlang_staffing - INFO - Saturday staffing needs: [2, 2, 2, 1, 2, 2, 2, 2, 4, 7, 13, 27, 46, 62, 60, 56, 45, 39, 27, 17, 12, 6, 4, 3]
+2025-07-11 15:19:05,881 - services.erlang_staffing - INFO - Completed calculation of hourly staffing needs
