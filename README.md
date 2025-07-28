@@ -258,7 +258,6 @@ This module validates entire shift patterns with continuously varying call loads
 ## How to Use
 
 1. **Setup:**
-   ```powershell
    # Install all required packages using requirements.txt
    pip install -r requirements.txt
 
@@ -269,8 +268,10 @@ This module validates entire shift patterns with continuously varying call loads
 
 3. **Run the Program:**
    ```powershell
-   source venv/bin/activate
-   uvicoen main:app --reload
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirements.txt
+   uvicorn main:app --reload
    ```
 
 4. **Review Results:**

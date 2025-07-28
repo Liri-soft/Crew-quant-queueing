@@ -148,3 +148,54 @@ def simulate(config: ConfigInput):
         "graph_data": graph_data,
         "excel_download_url": "/download-excel"
     }
+
+@router.post("/simulate-service-levels")
+def simulate_service_levels(
+    config: ConfigInput, 
+    min_sl: int = 80, 
+    max_sl: int = 95, 
+    steps: int = 5
+):
+    """
+    Run simulations across multiple service level targets and return comparison grid
+    """
+    # Patch config values in memory (same as /simulate endpoint)
+    try:
+        import config_variables.config as config_module
+        config_module.CALL_VOLUME = config.CALL_VOLUME
+        config_module.SHIFT_HOURS = config.SHIFT_HOURS
+        config_module.AGENT_EFFICIENCY = config.AGENT_EFFICIENCY
+        config_module.AVG_HANDLING_TIME = config.AVG_HANDLING_TIME
+        config_module.AVG_PATIENCE = config.AVG_PATIENCE
+        config_module.TARGET_SLA = config.TARGET_SLA
+        config_module.DESIRED_SLA = config.DESIRED_SLA
+        config_module.CALL_COMPLEXITY_DISTRIBUTION = config.CALL_COMPLEXITY_DISTRIBUTION
+        config_module.ACW_MIN = config.ACW_MIN
+        config_module.ACW_MAX = config.ACW_MAX
+        config_module.LUNCH_BREAK_TIME = config.LUNCH_BREAK_TIME
+        config_module.MAX_PERCENTAGE_AGENTS_ON_BREAK = config.MAX_PERCENTAGE_AGENTS_ON_BREAK
+            
+        importlib.reload(services.erlang_staffing)
+        importlib.reload(services.shift_optimizer)
+        importlib.reload(services.ideal_shift)
+        importlib.reload(services.shift_simulation)
+            
+        logger.info("Configuration values patched successfully")
+    except Exception as e:
+        logger.error(f"Error updating configuration: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Invalid configuration: {str(e)}")
+
+    # Run the simulation pipeline
+    staffing_needs = services.erlang_staffing.calculate_hourly_staffing_needs()
+    ideal_pattern = services.ideal_shift.find_ideal_shift_pattern(staffing_needs)
+    
+    # Run service level comparison simulation
+    result = services.shift_simulation.simulate_across_service_levels(
+        ideal_pattern, min_sl=min_sl, max_sl=max_sl, steps=steps
+    )
+    
+    # Return results as JSON - include both the transformed_results and comparison_grid
+    return {
+        # "transformed_results": result["transformed_results"],
+        "comparison_grid": result["comparison_grid"]
+    }

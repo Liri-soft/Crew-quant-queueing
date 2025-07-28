@@ -1,99 +1,44 @@
-2025-07-11 13:00:18,208 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 13:00:18,211 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 13:00:18,220 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 13:00:18,226 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 13:00:18,231 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 13:00:18,237 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 13:00:18,243 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 13:00:18,256 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 13:00:18,261 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 13:00:18,267 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 13:00:18,267 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 13:40:07,860 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 13:40:07,861 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 13:40:07,866 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 13:40:07,871 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 13:40:07,878 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 13:40:07,885 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 13:40:07,892 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 13:40:07,896 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 13:40:07,901 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 13:40:07,906 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 13:40:07,906 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 14:54:17,167 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 14:54:17,168 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 14:54:17,172 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 14:54:17,176 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 14:54:17,180 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 14:54:17,184 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 14:54:17,188 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 14:54:17,192 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 14:54:17,196 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 14:54:17,200 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 14:54:17,200 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 14:54:36,627 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 14:54:36,629 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 14:54:36,636 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 14:54:36,645 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 14:54:36,660 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 14:54:36,697 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 14:54:36,712 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 14:54:36,721 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 14:54:36,732 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 14:54:36,742 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 14:54:36,743 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 15:04:47,734 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 15:04:47,735 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 15:04:47,739 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 15:04:47,745 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 15:04:47,750 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 15:04:47,753 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 15:04:47,757 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 15:04:47,763 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 15:04:47,767 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 15:04:47,771 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 15:04:47,771 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 15:05:03,446 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 15:05:03,448 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 15:05:03,452 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 15:05:03,456 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 15:05:03,460 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 15:05:03,463 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 15:05:03,467 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 15:05:03,470 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 15:05:03,473 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 15:05:03,478 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 15:05:03,478 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 15:15:33,794 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 15:15:33,795 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 15:15:33,799 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 15:15:33,803 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 15:15:33,807 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 15:15:33,833 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 15:15:33,859 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 15:15:33,864 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 15:15:33,873 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 15:15:33,878 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 15:15:33,879 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 15:18:23,125 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 15:18:23,126 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 15:18:23,130 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 15:18:23,133 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 15:18:23,139 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 15:18:23,143 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 15:18:23,147 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 15:18:23,151 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 15:18:23,156 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 15:18:23,159 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 15:18:23,159 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
-2025-07-11 15:19:05,952 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
-2025-07-11 15:19:05,955 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
-2025-07-11 15:19:05,959 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 656 total agents, 5248 total agent hours
-2025-07-11 15:19:05,964 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 612 total agents, 4896 total agent hours
-2025-07-11 15:19:05,971 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 572 total agents, 4576 total agent hours
-2025-07-11 15:19:05,975 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 566 total agents, 4528 total agent hours
-2025-07-11 15:19:05,979 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 603 total agents, 4824 total agent hours
-2025-07-11 15:19:05,983 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 682 total agents, 5456 total agent hours
-2025-07-11 15:19:05,990 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 749 total agents, 5992 total agent hours
-2025-07-11 15:19:05,994 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 702 total agents, 5616 total agent hours
-2025-07-11 15:19:05,994 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4528 total hours and 58.5% average utilization
+2025-07-28 10:32:08,745 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-28 10:32:08,749 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-28 10:32:08,754 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 529 total agents, 4232 total agent hours
+2025-07-28 10:32:08,758 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 535 total agents, 4280 total agent hours
+2025-07-28 10:32:08,764 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 543 total agents, 4344 total agent hours
+2025-07-28 10:32:08,768 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 526 total agents, 4208 total agent hours
+2025-07-28 10:32:08,773 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 531 total agents, 4248 total agent hours
+2025-07-28 10:32:08,778 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-28 10:32:08,783 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 559 total agents, 4472 total agent hours
+2025-07-28 10:32:08,788 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 556 total agents, 4448 total agent hours
+2025-07-28 10:32:08,788 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4208 total hours and 73.0% average utilization
+2025-07-28 10:44:01,449 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-28 10:44:01,450 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-28 10:44:01,455 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 529 total agents, 4232 total agent hours
+2025-07-28 10:44:01,459 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 535 total agents, 4280 total agent hours
+2025-07-28 10:44:01,465 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 543 total agents, 4344 total agent hours
+2025-07-28 10:44:01,470 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 526 total agents, 4208 total agent hours
+2025-07-28 10:44:01,475 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 531 total agents, 4248 total agent hours
+2025-07-28 10:44:01,479 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-28 10:44:01,484 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 559 total agents, 4472 total agent hours
+2025-07-28 10:44:01,488 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 556 total agents, 4448 total agent hours
+2025-07-28 10:44:01,488 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4208 total hours and 73.0% average utilization
+2025-07-28 11:31:09,617 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-28 11:31:09,618 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-28 11:31:09,626 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 529 total agents, 4232 total agent hours
+2025-07-28 11:31:09,632 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 535 total agents, 4280 total agent hours
+2025-07-28 11:31:09,637 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 543 total agents, 4344 total agent hours
+2025-07-28 11:31:09,645 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 526 total agents, 4208 total agent hours
+2025-07-28 11:31:09,650 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 531 total agents, 4248 total agent hours
+2025-07-28 11:31:09,656 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-28 11:31:09,662 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 559 total agents, 4472 total agent hours
+2025-07-28 11:31:09,667 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 556 total agents, 4448 total agent hours
+2025-07-28 11:31:09,668 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4208 total hours and 73.0% average utilization
+2025-07-28 13:30:52,306 - services.ideal_shift - INFO - Starting ideal shift pattern calculation
+2025-07-28 13:30:52,308 - services.ideal_shift - INFO - Generated 8 shift patterns to evaluate
+2025-07-28 13:30:52,313 - services.ideal_shift - INFO - Pattern 0 evaluation complete: 529 total agents, 4232 total agent hours
+2025-07-28 13:30:52,319 - services.ideal_shift - INFO - Pattern 1 evaluation complete: 535 total agents, 4280 total agent hours
+2025-07-28 13:30:52,324 - services.ideal_shift - INFO - Pattern 2 evaluation complete: 543 total agents, 4344 total agent hours
+2025-07-28 13:30:52,329 - services.ideal_shift - INFO - Pattern 3 evaluation complete: 526 total agents, 4208 total agent hours
+2025-07-28 13:30:52,334 - services.ideal_shift - INFO - Pattern 4 evaluation complete: 531 total agents, 4248 total agent hours
+2025-07-28 13:30:52,340 - services.ideal_shift - INFO - Pattern 5 evaluation complete: 566 total agents, 4528 total agent hours
+2025-07-28 13:30:52,345 - services.ideal_shift - INFO - Pattern 6 evaluation complete: 559 total agents, 4472 total agent hours
+2025-07-28 13:30:52,350 - services.ideal_shift - INFO - Pattern 7 evaluation complete: 556 total agents, 4448 total agent hours
+2025-07-28 13:30:52,351 - services.ideal_shift - INFO - Found optimal pattern: Pattern 3 with 4208 total hours and 73.0% average utilization

@@ -1,18 +1,18 @@
 # Call Volume
 CALL_VOLUME = {
-    "Monday": [4, 2, 1, 2, 2, 1, 2, 4, 8, 23, 77, 176, 320, 482, 473, 422, 380, 303, 225, 129, 75, 36, 21, 9],
-    "Tuesday": [4, 3, 2, 2, 2, 2, 2, 3, 12, 36, 83, 172, 314, 442, 416, 367, 317, 245, 161, 117, 66, 24, 17, 8],
-    "Wednesday": [4, 2, 2, 1, 1, 2, 2, 5, 12, 41, 92, 189, 340, 451, 437, 405, 362, 277, 199, 128, 66, 32, 16, 7],
-    "Thursday": [5, 5, 3, 2, 2, 3, 2, 4, 11, 34, 92, 183, 329, 446, 429, 358, 315, 243, 173, 110, 61, 28, 14, 6],
-    "Friday": [2, 2, 1, 3, 0, 3, 2, 4, 8, 28, 105, 203, 316, 436, 452, 395, 351, 267, 179, 122, 66, 32, 15, 8],
-    "Saturday": [6, 3, 3, 1, 2, 2, 3, 6, 16, 40, 92, 212, 380, 519, 502, 470, 372, 312, 207, 123, 78, 34, 20, 9],
-    "Sunday": [5, 2, 2, 3, 1, 2, 3, 4, 9, 31, 76, 142, 225, 258, 228, 169, 134, 98, 65, 30, 21, 12, 5, 5]
+    "Monday": [40, 33, 24, 20, 19, 18, 23, 23, 25, 21, 18, 27, 36, 50, 68, 107, 178, 233, 214, 250, 323, 311, 279, 264],
+    "Tuesday": [210, 151, 130, 106, 76, 69, 81, 91, 98, 85, 91, 112, 127, 132, 151, 193, 223, 266, 261, 285, 345, 331, 333, 312],
+    "Wednesday": [218, 191, 185, 129, 106, 100, 98, 110, 101, 90, 95, 111, 130, 151, 163, 185, 251, 307, 272, 309, 367,333, 342, 315],
+    "Thursday": [224, 179, 148, 116, 88, 79, 92, 108, 114, 92, 99, 121, 132,159, 175, 197, 269, 296, 282,304, 368, 356, 323, 312],
+    "Friday": [241, 182, 164, 126, 94, 91, 101, 120, 122, 103, 104, 124, 167, 160, 176, 336, 277, 303, 326, 293, 355, 341, 301, 296],
+    "Saturday": [237, 170, 141, 122, 97, 87, 149, 116, 115, 104, 97, 121, 142,151, 159,204, 238, 261, 252, 252, 302, 283, 256, 239],
+    "Sunday": [184, 151, 125, 101, 90, 81, 104, 111, 108, 95, 92, 105, 103, 104, 99, 99, 95, 100, 90, 79, 89, 81, 60, 53]
 }
 # Shift structure parameters
 SHIFT_HOURS = 8          # Length of each shift (4, 6, 8, or 12)
-AGENT_EFFICIENCY = 100  # Agent efficiency (e.g., 100% of time is productive)
+AGENT_EFFICIENCY = 90  # Agent efficiency (e.g., 100% of time is productive)
 # Call handling
-AVG_HANDLING_TIME = 10   # Average handling time in minutes
+AVG_HANDLING_TIME = 6.3   # Average handling time in minutes
 AVG_PATIENCE = 180               # Average caller patience in seconds before abandonment
 # Service level goals
 TARGET_SLA = 20          # Target answer time in seconds (e.g., 20 seconds)
@@ -27,8 +27,8 @@ CALL_COMPLEXITY_DISTRIBUTION = {
     }
 }
 # After call work time range (seconds)
-ACW_MIN = 10
-ACW_MAX = 20
+ACW_MIN = 20
+ACW_MAX = 30
 # Break scheduling parameters
 LUNCH_BREAK_TIME = 45  # Break duration in seconds (45 minutes)
 # Maximum percentage of agents on break at once
